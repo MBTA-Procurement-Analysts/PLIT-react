@@ -19,7 +19,8 @@ export const getContracts = () => async dispatch => {
   const response = await plitApi.get('/api/contracts');
 
     dispatch({
-        type: CONTRACTS
+        type: CONTRACTS,
+        payload: response.data
     });
 };
 export const getContract = () => async dispatch => {
@@ -30,7 +31,7 @@ export const getContract = () => async dispatch => {
     });
 };
 export const contractCreate = (formValues) => async dispatch => {
-  const response = await plitApi.post("/api/add-bid", formValues);
+  const response = await plitApi.post("/api/add-contract", formValues);
 
     dispatch ({
         type: CREATE_CONTRACT,

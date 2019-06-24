@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 
 import {getContracts} from '../../actions';
-import MainBid from './MainContract';
+import MainContract from './MainContract';
 import Options from './Options';
 
 class Contracts extends React.Component {
@@ -23,15 +23,14 @@ class Contracts extends React.Component {
 
         return (
             <div className="ui container">
-                <MainBid/>
+                <MainContract/>
 
 
                 <table className="ui single line table">
                     <thead>
                     <tr>
-                        <th> ID</th>
-                        <th> Title</th>
-                        <th> Requested Date</th>
+                        <th> Description </th>
+                        <th> FC Number </th>
                     </tr>
                     </thead>
                     <tbody>{this.props.contracts.map((contract) => {
@@ -39,7 +38,7 @@ class Contracts extends React.Component {
                             <tr key={contract._id}>
                                 <td>{contract.Description}</td>
                                 <td>{contract.Contract_Num}</td>
-                                <td><Options bidId={contract._id} /></td>
+                                <td><Options contractId={contract._id} /></td>
 
 
                             </tr>

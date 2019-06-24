@@ -3,7 +3,7 @@ import {Form, Field} from 'react-final-form';
 import { Redirect } from 'react-router-dom';
 
 
-class BidForm extends React.Component {
+class ContractForm extends React.Component {
 //this takes the formProps input property (has value, onChange etc) and add them as props to the input element.
     //if we dont do this we have to do something like:
     //onChange={formProps.input.onChange} for every form property we want to use from redux form.
@@ -15,7 +15,7 @@ class BidForm extends React.Component {
 
     redirect = () => {
         if (this.state.fireRedirect) {
-            return <Redirect to='/bids' />;
+            return <Redirect to='/contracts' />;
         }
     };
 
@@ -67,7 +67,6 @@ class BidForm extends React.Component {
                 render = { ({handleSubmit}) => (
                     <div className="ui container">
                         <form onSubmit={handleSubmit} className="ui form error">
-                            <Field name="FC_Number" component={this.renderInput} label="FC Number"/>
                             <Field name = "Date" component={this.renderInput} label="Date"/>
                             <Field name = "Description" component={this.renderInput} label="Description" />
                             <Field name = "Project_Num_or_Fund" component={this.renderInput} label="Project number or Fund"/>
@@ -124,4 +123,4 @@ form: 'bidCreate',
 
  export default connect(null, {bidCreate})(formWrapped);
  */
-export default BidForm;
+export default ContractForm;

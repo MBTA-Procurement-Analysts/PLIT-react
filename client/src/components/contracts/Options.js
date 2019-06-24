@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Dropdown, Button} from 'semantic-ui-react';
 import {Redirect} from 'react-router-dom';
 
-import {bidDelete} from '../../actions/index'
+import {contractDelete} from '../../actions/index'
 
 class Options extends React.Component {
     state = {value: ''};
@@ -34,12 +34,12 @@ class Options extends React.Component {
 
   dropdownLogic = (id) => {
       if (this.state.value === 'edit') {
-            const path = `/bid/edit/${id}`;
+            const path = `/contract/edit/${id}`;
           return <Redirect to={path} />
       }
 
       if (this.state.value === 'delete') {
-            this.props.bidDelete(this.props.bidId);
+            this.props.contractDelete(this.props.contractId);
       }
   };
 
@@ -48,7 +48,7 @@ class Options extends React.Component {
         <div>
             <Button.Group color='teal'>
             <Dropdown options={this.options()} floating button className='icon' value={this.state.value} onChange={this.handleChange} />
-                {this.dropdownLogic(this.props.bidId)}
+                {this.dropdownLogic(this.props.contractId)}
             </Button.Group>
         </div>
     );
@@ -57,4 +57,4 @@ class Options extends React.Component {
 const mapStateToProps = (state) => {
   return {role: state.auth.user.role};
 };
-export default connect(mapStateToProps, {bidDelete})(Options);
+export default connect(mapStateToProps, {contractDelete})(Options);

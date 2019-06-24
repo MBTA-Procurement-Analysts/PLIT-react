@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AddBidButton from './AddContractButton';
+import AddContractButton from './AddContractButton';
 import Search from '../bids/Search';
 
 const MainBid = () => {
@@ -29,7 +29,7 @@ const MainBid = () => {
                             <i className="world icon"></i>
                             Create
                         </div>
-                        <AddBidButton />
+                        <AddContractButton />
                     </div>
                 </div>
             </div>

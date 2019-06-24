@@ -5,11 +5,16 @@ import Welcome from './Welcome';
 import Home from './Home';
 import PrivateRoute from './authentication/PrivateRoute';
 import Header from './Header';
+
 import Bids from './bids/Bids';
 import BidEdit from './bids/BidEdit';
 import BidCreate from './bids/BidCreate';
+
 import Report from './earlyWarning/Report';
-import Contracts from './contracts/Contracts'
+
+import Contracts from './contracts/Contracts';
+import ContractEdit from './contracts/ContractEdit';
+import ContractCreate from './contracts/ContractCreate';
 
 const App = () => {
 
@@ -27,6 +32,8 @@ const App = () => {
                       <PrivateRoute path="/bid/add" exact component = {BidCreate}/>
 
                       <PrivateRoute path="/contracts" exact component = {Contracts} />
+                      <PrivateRoute path = "/contract/edit/:id" exact component = {ContractEdit} />
+                      <PrivateRoute path = "/contract/add" exact component = {ContractCreate} />
 
                       <Route path="/earlywarning" exact component={Report}/>
                   </Switch>

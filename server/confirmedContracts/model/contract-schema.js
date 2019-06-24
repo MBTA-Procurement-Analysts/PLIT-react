@@ -8,7 +8,7 @@ var cSchema = mongoose.Schema({
         'Project_Num_or_Fund': String,
         'Buyer_Initials': String,
         'Req_Num': String,
-        'IFB/RFP_Num': String,
+        'IFBRFP_Num': String,
         'Amount': String,
         'Vendor': String,
     },
